@@ -1,0 +1,388 @@
+{
+    "name": "Top 20 Secure PLC Coding Practices",
+    "shortName": "Secure PLC Coding",
+    "category":"Process Control and SCADA",
+    "requirements": [
+        {
+            "identifier": "PLC1",
+            "text": "Modularize PLC Code",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Split PLC code into modules, using different function blocks (sub-routines). Test modules independently.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC2",
+            "text": "Track operating modes",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Keep the PLC in RUN mode. If PLCs are not in RUN mode, there should be an alarm to the operators.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC3",
+            "text": "Leave operational logic in the PLC wherever feasible",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Leave as much operational logic e.g., totalizing or integrating, as possible directly in the PLC. The HMI does not get enough updates to do this well.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC4",
+            "text": "Use PLC flags as integrity checks",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Put counters on PLC error flags to capture any math problems.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC5",
+            "text": "Use cryptographic and / or checksum integrity checks for PLC code",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Use cryptographic hashes, or checksums if cryptographic hashes are unavailable, to check PLC code integrity and raise an alarm when they change.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC6",
+            "text": "Validate timers and counters",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"If timers and counters values are written to the PLC program, they should be validated by the PLC for reasonableness and verify backward counts below zero",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC7",
+            "text": "Validate and alert for paired inputs / outputs",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"If you have paired signals, ensure that both signals are not asserted together. Alarm the operator when input / output states occur that are physically not feasible. Consider making paired signals independent or adding delay timers when toggling outputs could be damaging to actuators",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC8",
+            "text": "Validate HMI input variables at the PLC level, not only at HMI",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"HMI access to PLC variables can (and should) be restricted to a valid operational value range at the HMI, but further cross-checks in the PLC should be added to prevent, or alert on, values outside of the acceptable ranges which are programmed into the HMI.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC9",
+            "text": "Validate indirections",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Validate indirections by poisoning array ends to catch fence-post errors.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC10",
+            "text": "Assign designated register blocks by function (read/write/validate)",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Assign designated register blocks for specific functions in order to validate data, avoid buffer overflows and block unauthorized external writes to protect controller data.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC11",
+            "text": "Instrument for plausibility checks",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Instrument the process in a way that allows for plausibility checks by cross-checking different measurements.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC12",
+            "text": "Validate inputs based on physical plausibility",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Ensure operators can only input what’s practical or physically feasible in the process. Set a timer for an operation to the duration it should physically take. Consider alerting when there are deviations. Also alert when there is unexpected inactivity.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC13",
+            "text": "Disable unneeded / unused communication ports and protocols",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"PLC controllers and network interface modules generally support multiple communication protocols that are enabled by default. Disable ports and protocols that are not required for the application.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC14",
+            "text": "Restrict third-party data interfaces",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Restrict the type of connections and available data for 3rd party interfaces. The connections and/or data interfaces should be well defined and restricted to only allow read/write capabilities for the required data transfer.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC15",
+            "text": "Define a safe process state in case of a PLC restart",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Define safe states for the process in case of PLC restarts (e.g., energize contacts, deenergize, keep previous state).",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC16",
+            "text": "Summarize PLC cycle times and trend them on the HMI",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Summarize PLC cycle time every 2-3 seconds and report to HMI for visualization on a graph.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC17",
+            "text": "Log PLC uptime and trend it on the HMI",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Log PLC uptime to know when it’s been restarted. Trend and log uptime on the HMI for diagnostics",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC18",
+            "text": "Log PLC hard stops and trend them on the HMI",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Store PLC hard stop events from faults or shutdowns for retrieval by HMI alarm systems to consult before PLC restarts. Time sync for more accurate data.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC19",
+            "text": "Monitor PLC memory usage and trend it on the HMI",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Measure and provide a baseline for memory usage for every controller deployed in the production environment and trend it on the HMI.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        },
+        {
+            "identifier": "PLC20",
+            "text": "Trap false negatives and false positives for critical alerts",
+            "heading":"Software",
+            "weight":0,
+            "supplemental":"Identify critical alerts and program a trap for those alerts. Set the trap to monitor the trigger conditions and the alert state for any deviation.",
+            "category":"Secure Implementation",
+            "subheading":"Perform Secure Software Development",
+            "subcategory":"Development Process",
+            "securityAssuranceLevels": [
+                "L",
+                "M",
+                "H",
+                "VH"
+            ],
+            "source":null,
+            "references":[],
+            "questions":[]
+        }
+    ],
+    "summary":"Questions to evaluate conformance with secure PLC coding practices"
+}
